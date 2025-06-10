@@ -5,6 +5,7 @@ import VueRouter from "vue-router";
 Vue.use(VueRouter);
 var router = new VueRouter({
   mode: "history",
+  base: process.env.NODE_ENV === "production" ? "/albums-by-year/" : "/",
   routes: [],
 });
 
