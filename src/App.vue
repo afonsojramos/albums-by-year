@@ -83,7 +83,7 @@ export default {
   data() {
     return {
       scopes: ["user-library-read"],
-      client_id: "8c00d93547824017b1854018ed35bdef",
+      client_id: "a20a72a7077641928e56c59ef9b5e4a2",
       access_token: null,
       theme: { icon: "moon", name: "dark", label: "Dark Theme" },
       refreshing: false,
@@ -171,11 +171,15 @@ export default {
       } else {
         const theme_names = Object.keys(themes);
         this.theme.name =
-          theme_names[(theme_names.indexOf(this.theme.name) + 1) % theme_names.length];
+          theme_names[
+            (theme_names.indexOf(this.theme.name) + 1) % theme_names.length
+          ];
       }
       this.theme.icon = themes[this.theme.name].icon;
       this.theme.label = themes[this.theme.name].label;
-      document.getElementsByTagName("html")[0].setAttribute("theme", this.theme.name);
+      document
+        .getElementsByTagName("html")[0]
+        .setAttribute("theme", this.theme.name);
       this.$cookies.set("theme", this.theme.name);
     },
   },
